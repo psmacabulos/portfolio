@@ -1,0 +1,88 @@
+import { useState } from 'react';
+import {
+  FaBars,
+  FaTimes,
+  FaGithub,
+  FaLinkedin,
+  FaFacebook,
+} from 'react-icons/fa';
+import { HiOutlineMail } from 'react-icons/hi';
+import { BsFillPersonLinesFill } from 'react-icons/bs';
+
+import Logo from '../assets/logo.png';
+
+function Navbar() {
+  /**
+   * States :
+   * nav - for the hamburger menu
+   */
+  const [nav, setNav] = useState(false);
+  const handleClick = () => setNav(!nav);
+
+  return (
+    <div className='fixed w-full flex justify-between items-center px-4  h-[80px] bg-[#0a192f] text-gray-300  '>
+      <div>
+        <img src={Logo} alt='logo' style={{ width: '100px' }} />
+      </div>
+
+      {/* menu */}
+      <div>
+        <ul className='hidden md:flex'>
+          <li>Home</li>
+          <li>About</li>
+          <li>Skills</li>
+          <li>Work</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+
+      {/* Hamburger */}
+      <div onClick={handleClick} className='md:hidden z-20'>
+        {nav ? <FaTimes /> : <FaBars />}
+      </div>
+
+      {/* Mobile menu */}
+      <ul
+        className={
+          nav
+            ? 'absolute top-0 left-0 w-full h-screen flex flex-col justify-center items-center bg-[#0a192f]'
+            : 'hidden'
+        }
+      >
+        <li className='py-6 text-4xl'>Home</li>
+        <li className='py-6 text-4xl'>About</li>
+        <li className='py-6 text-4xl'>Skills</li>
+        <li className='py-6 text-4xl'>Work</li>
+        <li className='py-6 text-4xl'>Contact</li>
+      </ul>
+
+      {/* Social icons */}
+      <div className='hidden lg:flex fixed flex-column top-[35%] left-0'>
+        <ul>
+          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[0px]  duration-300 bg-blue-600 '>
+            <a className='flex justify-between items-center w-full' href='/'>
+              Linkedin <FaLinkedin size={30} />
+            </a>
+          </li>
+          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[0px] duration-300 bg-[#333] '>
+            <a className='flex justify-between items-center w-full' href='/'>
+              Github <FaGithub size={30} />
+            </a>
+          </li>
+          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[0px] duration-300 bg-[#528d81] '>
+            <a className='flex justify-between items-center w-full' href='/'>
+              Resume <BsFillPersonLinesFill size={30} />
+            </a>
+          </li>
+          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[0px] duration-300 bg-[#232936] '>
+            <a className='flex justify-between items-center w-full' href='/'>
+              Email <HiOutlineMail size={30} />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+export default Navbar;
