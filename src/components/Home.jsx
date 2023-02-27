@@ -10,7 +10,7 @@ const Home = () => {
       <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full'>
         <p className='text-[#2ebfa5]'>Hi, my name is</p>
         <h1 className='text-4xl sm:text-7xl font-bold text-[#ccd6f6]'>
-          Patrick
+          Patrick.
         </h1>
         <h2 className='text-4xl sm:text-7xl font-bold text-[#8892b0]'>
           I'm a Full Stack Developer.
@@ -21,7 +21,7 @@ const Home = () => {
           collaboration and independence, I thrive in both team-based and
           self-directed projects.
         </p>
-        <div>
+        <div className='mt-2'>
           <button className='group text-white border-2 px-6 py-3 flex items-center hover:bg-[#2ebfa5] hover:border-[#2ebfa5] duration-700'>
             View Work{' '}
             <HiChevronDoubleRight className='ml-3 group-hover:rotate-90 duration-500' />
