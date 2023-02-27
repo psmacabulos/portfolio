@@ -1,11 +1,5 @@
 import { useState } from 'react';
-import {
-  FaBars,
-  FaTimes,
-  FaGithub,
-  FaLinkedin,
-  FaFacebook,
-} from 'react-icons/fa';
+import { FaBars, FaTimes, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 
@@ -20,7 +14,7 @@ function Navbar() {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className='fixed w-full flex justify-between items-center px-4  h-[80px] bg-[#0a192f] text-gray-300  '>
+    <div className='fixed w-full flex justify-between items-center px-4  h-[80px]  text-gray-300  bg-[#0a192f]/95'>
       <div>
         <img src={Logo} alt='logo' style={{ width: '100px' }} />
       </div>
@@ -32,6 +26,7 @@ function Navbar() {
           <li>About</li>
           <li>Skills</li>
           <li>Work</li>
+
           <li>Contact</li>
         </ul>
       </div>
